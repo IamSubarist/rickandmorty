@@ -13,6 +13,7 @@ function App() {
           <li>
             <svg />
             <span>1205 руб.</span>
+            <p>Хуй</p>
           </li>
           <li>
             <svg />
