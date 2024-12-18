@@ -1,5 +1,4 @@
 function Item({ props }) {
-  //пропс подчёркнут красным наверно из-за того, что я не указал тип данных
   return (
     <>
       <div className="border rounded-md w-52 overflow-hidden">

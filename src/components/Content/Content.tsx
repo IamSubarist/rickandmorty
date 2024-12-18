@@ -1,7 +1,6 @@
-import React from "react";
-import Logo from "../assets/content-logo.svg";
-import Filters from "./Filters";
-import Items from "./Items";
+import Logo from "../../assets/content-logo.svg";
+import Filters from "../Filters/Filters";
+import Items from "../Items";
 
 function Content() {
   return (
