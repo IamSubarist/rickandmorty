@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const BASE_URL = "https://rickandmortyapi.com/api";
+const RICK_AND_MORTY_API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const axiosInstance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: RICK_AND_MORTY_API_URL,
 });
 
 export const getCharacters = async () => {
