@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function Filters() {
   const [speciesDropDown, setSpeciesDropDown] = useState(false);
   const [genderDropDown, setGenderDropDown] = useState(false);
   const [statusDropDown, setStatusDropDown] = useState(false);
-  const [speciesFilter, setSpeciesFilter] = useState("Species");
-  const [genderFilter, setGenderFilter] = useState("Gender");
-  const [statusFilter, setStatusFilter] = useState("Status");
+  const [speciesFilter, setSpeciesFilter] = useState('Species');
+  const [genderFilter, setGenderFilter] = useState('Gender');
+  const [statusFilter, setStatusFilter] = useState('Status');
 
-  const species = ["Human", "Alien", "Mythical"];
-  const gender = ["Male", "Female"];
-  const status = ["Alive", "Dead"];
+  const species = ['Human', 'Alien', 'Mythical'];
+  const gender = ['Male', 'Female'];
+  const status = ['Alive', 'Dead'];
 
   const handleSpeciesDropDownClick = () => {
     setSpeciesDropDown(!speciesDropDown);
@@ -51,8 +51,8 @@ function Filters() {
           id="myDropdown"
           className={
             speciesDropDown
-              ? "w-full absolute z-10 pt-4"
-              : "hidden w-full absolute z-10 pt-4"
+              ? 'w-full absolute z-10 pt-4'
+              : 'hidden w-full absolute z-10 pt-4'
           }
         >
           {species.map((item, index) => (
@@ -74,8 +74,8 @@ function Filters() {
           id="myDropdown"
           className={
             genderDropDown
-              ? "w-full absolute z-10 pt-4"
-              : "hidden w-full absolute z-10 pt-4"
+              ? 'w-full absolute z-10 pt-4'
+              : 'hidden w-full absolute z-10 pt-4'
           }
         >
           {gender.map((item, index) => (
@@ -97,8 +97,8 @@ function Filters() {
           id="myDropdown"
           className={
             statusDropDown
-              ? "w-full absolute z-10 pt-4"
-              : "hidden w-full absolute z-10 pt-4"
+              ? 'w-full absolute z-10 pt-4'
+              : 'hidden w-full absolute z-10 pt-4'
           }
         >
           {status.map((item, index) => (
