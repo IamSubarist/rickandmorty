@@ -1,5 +1,3 @@
-import React from "react";
-
 function Footer() {
   return (
     <div className="mx-auto">
@@ -8,4 +6,5 @@ function Footer() {
   );
 }
 
+// Ебал дефолтный.
 export default Footer;

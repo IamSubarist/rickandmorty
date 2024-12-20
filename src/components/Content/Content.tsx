@@ -5,6 +5,7 @@ import Items from "../Items";
 function Content() {
   return (
     <div className="flex flex-col justify-center">
+      {/* Тоже самое с alt. */}
       <img src={Logo} alt="" />
       <div className="flex flex-col gap-10">
         <Filters />
@@ -14,4 +15,5 @@ function Content() {
   );
 }
 
+// Ебал дефолтный.
 export default Content;
