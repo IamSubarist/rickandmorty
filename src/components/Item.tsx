@@ -1,4 +1,6 @@
-function Item({ props }) {
+// Card
+// FC<ItemProps>, где ItemProps - интерфейс твоего компонента.
+const Item = ({ props }) => {
   return (
     <>
       <div className="border rounded-md w-52 overflow-hidden">
@@ -16,6 +18,6 @@ function Item({ props }) {
       </div>
     </>
   );
-}
+};
 
 export default Item;
