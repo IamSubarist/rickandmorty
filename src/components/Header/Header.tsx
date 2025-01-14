@@ -1,35 +1,20 @@
 import headerLogo from "../../assets/header-logo.svg";
+import { HeaderNavLinks } from "../HeaderNavLinks/HeaderNavLinks";
 
-// const Component = () => ( ... )
 export const Header = () => {
+  const navLinks = [
+    { id: 1, name: "Characters", link: "/" },
+    { id: 2, name: "Location", link: "location" },
+    { id: 3, name: "Episodes", link: "episodes" },
+  ];
   return (
-    // Фрагмент здесь не нужен.
-    <>
-      <div className="flex flex-row justify-between items-center">
-        {/* alt стоит или заполнить или не использовать. */}
-        <img src={headerLogo} />
-        <div className="menu__link flex gap-5">
-          {/* 
-            Вынести элементы меню в отдельный переиспользуемый компонент.
-
-            Структура может быть следующая: 
-              [{
-                id: number,
-                name: string,
-                link: string,
-              }]
-          */}
-          <a className="font-bold" href="/">
-            Characters
-          </a>
-          <a className="font-bold" href="/">
-            Location
-          </a>
-          <a className="font-bold" href="/">
-            Episodes
-          </a>
-        </div>
+    <div className="flex flex-row justify-between items-center">
+      <img src={headerLogo} />
+      <div className="menu__link flex gap-5">
+        {navLinks.map((link) => (
+          <HeaderNavLinks key={link.id} props={link} />
+        ))}
       </div>
-    </>
+    </div>
   );
 };
