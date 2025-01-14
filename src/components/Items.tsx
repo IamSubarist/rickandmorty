@@ -1,6 +1,7 @@
 import { Card } from "./Card";
 import { useState } from "react";
-import { data } from "../api/get-characters-query";
+import { useQuery } from "@tanstack/react-query";
+import { getCharacters } from "../api/get-character";
 
 type CharacterProps = {
   id: number;
@@ -25,6 +26,11 @@ export const Items = () => {
   // }
 
   // data?.results.map(item => item.)
+
+  const { data } = useQuery({
+    queryKey: ["results"],
+    queryFn: getCharacters,
+  });
 
   const [visibleCount, setVisibleCount] = useState(8);
   const loadMore = () => {
