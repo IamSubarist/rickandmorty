@@ -1,5 +1,5 @@
-import headerLogo from "../../assets/header-logo.svg";
-import { HeaderNavLinks } from "../HeaderNavLinks/HeaderNavLinks";
+import headerLogo from "../../../assets/header-logo.svg";
+import { HeaderNavLinks } from "./HeaderNavLinks";
 
 export const Header = () => {
   const navLinks = [

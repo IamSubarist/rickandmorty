@@ -1,7 +1,7 @@
 import { Card } from "./Card";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getCharacters } from "../api/get-character";
+import { getCharacters } from "../../../api/get-character";
 
 type CharacterProps = {
   id: number;

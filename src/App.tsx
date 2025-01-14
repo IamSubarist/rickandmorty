@@ -1,7 +1,7 @@
-import { Content } from "./components/Content/Content";
-import { Footer } from "./components/Footer/Footer";
-import { Header } from "./components/Header/Header";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { AppProviders } from "./app/providers/Providers";
+import { Content } from "./features/Content/components/Content";
+import { Footer } from "./features/Footer/components/Footer";
+import { Header } from "./features/Header/components/Header";
 
 // Посмотреть архитектуру frontend приложений - FSD.
 /* 
@@ -40,29 +40,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
       image
 */
 
-// Посмотреть конфигурацию, добавить при необходимости.
-const queryClient = new QueryClient();
-
-/*
-  Можно выносить провайдеры в отдельный файл.
-
-  export const RequestProvider = (children) => {
-
-  <QueryClientProvider>
-    {children}
-  </QueryClientProvider>
-
-  }
-*/
-
 export const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
+    <AppProviders>
       <div className="w-3/5 mx-auto flex flex-col justify-center">
         <Header />
         <Content />
         <Footer />
       </div>
-    </QueryClientProvider>
+    </AppProviders>
   );
 };
