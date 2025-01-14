@@ -1,4 +1,3 @@
-// Card
 // FC<ItemProps>, где ItemProps - интерфейс твоего компонента.
 export const Item = ({ props }) => {
   return (

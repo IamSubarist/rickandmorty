@@ -1,4 +1,4 @@
-import { Item } from "./Item";
+import { Item } from "./Card";
 import { useQuery } from "@tanstack/react-query";
 import { getCharacters } from "../api/characters";
 import { useState } from "react";
