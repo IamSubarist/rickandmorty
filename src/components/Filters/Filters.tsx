@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-function Filters() {
+export const Filters = () => {
   /* 
     Можно сделать всего один state со структурой:
 
@@ -191,7 +191,4 @@ function Filters() {
       </div>
     </div>
   );
-}
-
-// Ебал дефолтный.
-export default Filters;
+};

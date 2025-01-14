@@ -1,13 +1,13 @@
 import headerLogo from "../../assets/header-logo.svg";
 
 // const Component = () => ( ... )
-export function Header() {
+export const Header = () => {
   return (
     // Фрагмент здесь не нужен.
     <>
       <div className="flex flex-row justify-between items-center">
         {/* alt стоит или заполнить или не использовать. */}
-        <img src={headerLogo} alt="" />
+        <img src={headerLogo} />
         <div className="menu__link flex gap-5">
           {/* 
             Вынести элементы меню в отдельный переиспользуемый компонент.
@@ -32,4 +32,4 @@ export function Header() {
       </div>
     </>
   );
-}
+};

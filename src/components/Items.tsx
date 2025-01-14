@@ -1,4 +1,4 @@
-import Item from "./Item";
+import { Item } from "./Item";
 import { useQuery } from "@tanstack/react-query";
 import { getCharacters } from "../api/characters";
 import { useState } from "react";
@@ -14,7 +14,7 @@ type CharacterProps = {
 /*
   Я бы сделал этот компонент обособленным, просто принимающим items, которые передавались бы в него через props.
 */
-function Items() {
+export const Items = () => {
   /*
     Отдельный файл (get-characters-query)
 
@@ -73,6 +73,4 @@ function Items() {
         )}
     </>
   );
-}
-
-export default Items;
+};

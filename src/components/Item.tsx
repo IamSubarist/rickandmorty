@@ -1,15 +1,11 @@
 // Card
 // FC<ItemProps>, где ItemProps - интерфейс твоего компонента.
-const Item = ({ props }) => {
+export const Item = ({ props }) => {
   return (
     <>
       <div className="border rounded-md w-52 overflow-hidden">
         <div className="rounded-t-md">
-          <img
-            className="w-full h-auto object-cover"
-            src={props.image}
-            alt=""
-          />
+          <img className="w-full h-auto object-cover" src={props.image} />
         </div>
         <div className="p-3">
           <p className="text-lg font-bold">{props.name}</p>
@@ -19,5 +15,3 @@ const Item = ({ props }) => {
     </>
   );
 };
-
-export default Item;
