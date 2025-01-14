@@ -1,5 +1,5 @@
 // FC<ItemProps>, где ItemProps - интерфейс твоего компонента.
-export const Item = ({ props }) => {
+export const Card = ({ props }) => {
   return (
     <>
       <div className="border rounded-md w-52 overflow-hidden">

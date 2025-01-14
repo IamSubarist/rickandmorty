@@ -1,7 +1,6 @@
-import { Item } from "./Card";
-import { useQuery } from "@tanstack/react-query";
-import { getCharacters } from "../api/characters";
+import { Card } from "./Card";
 import { useState } from "react";
+import { data } from "../api/get-characters-query";
 
 type CharacterProps = {
   id: number;
@@ -15,16 +14,6 @@ type CharacterProps = {
   Я бы сделал этот компонент обособленным, просто принимающим items, которые передавались бы в него через props.
 */
 export const Items = () => {
-  /*
-    Отдельный файл (get-characters-query)
-
-    const getCharactersQuery = (params) => useQuery({
-      // Ключ тоже выносится в константы в отдельный файл и зачастую имеет вид - const CHARACTERS_PRIMARY_KEY = ['get-characters']
-      queryKey: ["results"],
-      queryFn: () => getCharacters(params),
-  });
-
-  */
   // interface Character {
   //   id: number
   //   gender: string
@@ -35,19 +24,9 @@ export const Items = () => {
   //   results: Character[]
   // }
 
-  const {
-    data,
-    // isLoading, isError
-  } = useQuery({
-    queryKey: ["results"],
-    queryFn: getCharacters,
-  });
-
   // data?.results.map(item => item.)
 
-  const [visibleCount, setVisibleCount] = useState(8); // Начальное количество отображаемых элементов
-
-  // Функция для увеличения количества видимых персонажей
+  const [visibleCount, setVisibleCount] = useState(8);
   const loadMore = () => {
     setVisibleCount((prevCount) => prevCount + 8);
   };
@@ -58,19 +37,17 @@ export const Items = () => {
         {data?.results
           .slice(0, visibleCount)
           .map((character: CharacterProps) => (
-            <Item key={character.id} props={character} />
+            <Card key={character.id} props={character} />
           ))}
       </div>
-      {data &&
-        visibleCount < data.results.length && ( // Проверяем, нужно ли показывать кнопку "Load More"
-          // Компонент load-more-button.
-          <button
-            onClick={loadMore}
-            className="mt-4 py-2 px-4 bg-blue-500 text-white rounded"
-          >
-            Load More
-          </button>
-        )}
+      {data && visibleCount < data.results.length && (
+        <button
+          onClick={loadMore}
+          className="mt-4 py-2 px-4 bg-blue-500 text-white rounded"
+        >
+          Load More
+        </button>
+      )}
     </>
   );
 };
