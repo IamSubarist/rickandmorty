@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Input } from "../../Filters/components/Input";
 import { Select } from "../../Filters/components/Select";
+import { FiltersProps } from "../../Filters/lib/types";
 
 export const Filters = () => {
   // Состояние для всех фильтров
-  const [filters, setFilters] = useState({
+  const [filters, setFilters] = useState<FiltersProps>({
     name: "",
     species: "Species",
     gender: "Gender",

@@ -2,24 +2,12 @@ import { Card } from "./Card";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getCharacters } from "../../../api/get-character";
-
-type CharacterProps = {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-  type: undefined;
-};
+import { CharacterProps } from "../lib/types";
 
 /*
   Я бы сделал этот компонент обособленным, просто принимающим items, которые передавались бы в него через props.
 */
 export const Items = () => {
-  // interface Character {
-  //   id: number
-  //   gender: string
-  //   image: string
-  // }
 
   // type CharacterResponseType = {
   //   results: Character[]
@@ -43,7 +31,7 @@ export const Items = () => {
         {data?.results
           .slice(0, visibleCount)
           .map((character: CharacterProps) => (
-            <Card key={character.id} props={character} />
+            <Card key={character.id} character={character} />
           ))}
       </div>
       {data && visibleCount < data.results.length && (

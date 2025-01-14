@@ -1,13 +1,10 @@
 import { useState } from "react";
+import { SelectProps } from "../lib/types";
 
-export const Select = ({
+export const Select: React.FC<SelectProps> = ({
   options,
   selected,
   onSelect,
-}: {
-  options: string[];
-  selected: string;
-  onSelect: (value: string) => void;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 

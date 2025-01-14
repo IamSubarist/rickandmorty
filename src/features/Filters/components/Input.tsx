@@ -1,12 +1,7 @@
 import { useState } from "react";
+import { InputProps } from "../lib/types";
 
-export const Input = ({
-  placeholder,
-  onChange,
-}: {
-  placeholder: string;
-  onChange: (value: string) => void;
-}) => {
+export const Input: React.FC<InputProps> = ({ placeholder, onChange }) => {
   const [inputValue, setInputValue] = useState("");
 
   return (

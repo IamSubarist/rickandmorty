@@ -1,8 +1,9 @@
 import headerLogo from "../../../assets/header-logo.svg";
 import { HeaderNavLinks } from "./HeaderNavLinks";
+import { Links } from "./lib/types";
 
 export const Header = () => {
-  const navLinks = [
+  const navLinks: Links[] = [
     { id: 1, name: "Characters", link: "/" },
     { id: 2, name: "Location", link: "location" },
     { id: 3, name: "Episodes", link: "episodes" },
