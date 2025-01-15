@@ -1,7 +1,9 @@
-import { AppProviders } from "./app/providers/Providers";
-import { Content } from "./features/Content/components/Content";
+import { AppProviders } from "./app/providers/AppProviders";
+import { Characters } from "./pages/Characters";
 import { Footer } from "./features/Footer/components/Footer";
 import { Header } from "./features/Header/components/Header";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Location } from "./pages/Location";
 
 // Посмотреть архитектуру frontend приложений - FSD.
 /* 
@@ -43,11 +45,17 @@ import { Header } from "./features/Header/components/Header";
 export const App = () => {
   return (
     <AppProviders>
-      <div className="w-3/5 mx-auto flex flex-col justify-center">
-        <Header />
-        <Content />
-        <Footer />
-      </div>
+      <Router>
+        <div className="w-3/5 mx-auto flex flex-col justify-center">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Characters />} />
+            <Route path="/location" element={<Location />} />
+            {/* <Route path="/episodes" element={<Episodes />} /> */}
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
     </AppProviders>
   );
 };

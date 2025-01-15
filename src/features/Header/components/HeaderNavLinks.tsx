@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import { HeaderNavLinksProps } from "./lib/types";
 
 export const HeaderNavLinks: React.FC<HeaderNavLinksProps> = ({ props }) => {
   return (
-    <a className="font-bold" href={props.link}>
+    <Link className="font-bold" to={props.link}>
       {props.name}
-    </a>
+    </Link>
   );
 };
