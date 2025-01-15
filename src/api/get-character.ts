@@ -1,4 +1,4 @@
-import { CHARACTER_REQUEST_TARGET } from "./constans";
+import { CHARACTER_REQUEST_TARGET } from "./constants";
 import { axiosInstance } from "./config";
 import { CharacterResponseProps } from "./lib/types";
 

@@ -3,7 +3,7 @@ import { Characters } from "./pages/Characters";
 import { Footer } from "./features/Footer/components/Footer";
 import { Header } from "./features/Header/components/Header";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Location } from "./pages/Location";
+import { Locations } from "./pages/Locations";
 
 // Посмотреть архитектуру frontend приложений - FSD.
 /* 
@@ -46,15 +46,15 @@ export const App = () => {
   return (
     <AppProviders>
       <Router>
+        <Header />
         <div className="w-3/5 mx-auto flex flex-col justify-center">
-          <Header />
           <Routes>
             <Route path="/" element={<Characters />} />
-            <Route path="/location" element={<Location />} />
+            <Route path="/locations" element={<Locations />} />
             {/* <Route path="/episodes" element={<Episodes />} /> */}
           </Routes>
-          <Footer />
         </div>
+        <Footer />
       </Router>
     </AppProviders>
   );

@@ -1,14 +1,14 @@
-import { Card } from "./Card";
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getCharacters } from "../../../api/get-character";
-import { CharacterProps } from "../lib/types";
+import { useQuery, QueryFunction } from "@tanstack/react-query";
 
 /*
   Я бы сделал этот компонент обособленным, просто принимающим items, которые передавались бы в него через props.
 */
-export const Items = () => {
-
+type ItemsProps<T> = {
+  query: QueryFunction<{ results: T[] }>; // Функция запроса, возвращающая массив объектов
+  renderItem: (item: T) => React.ReactNode; // Как рендерить один элемент
+};
+export const Items = <T,>({ query, renderItem }: ItemsProps<T>) => {
   // type CharacterResponseType = {
   //   results: Character[]
   // }
@@ -17,7 +17,7 @@ export const Items = () => {
 
   const { data } = useQuery({
     queryKey: ["results"],
-    queryFn: getCharacters,
+    queryFn: query,
   });
 
   const [visibleCount, setVisibleCount] = useState(8);
@@ -28,11 +28,7 @@ export const Items = () => {
   return (
     <>
       <div className="flex flex-row justify-between flex-wrap gap-4">
-        {data?.results
-          .slice(0, visibleCount)
-          .map((character: CharacterProps) => (
-            <Card key={character.id} character={character} />
-          ))}
+        {data?.results.slice(0, visibleCount).map((item) => renderItem(item))}
       </div>
       {data && visibleCount < data.results.length && (
         <button
