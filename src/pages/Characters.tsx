@@ -12,6 +12,7 @@ export const Characters = () => {
         <Filters />
         <Items
           query={getCharacters}
+          // dfhgf
           renderItem={(character) => (
             <Card key={character.id} character={character} />
           )}
