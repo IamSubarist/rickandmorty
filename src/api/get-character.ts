@@ -12,3 +12,13 @@ export const getCharacters =
       return null;
     }
   };
+
+// const GET_CHARACTERS_PRIMARY_KEY = ["results"];
+
+// const useGetCharactersQuery = () =>
+//   useQuery<any, any>({
+//     queryKey: GET_CHARACTERS_PRIMARY_KEY,
+//     queryFn: getCharacters,
+//   });
+
+//   const {} = getCharactersQuery()
