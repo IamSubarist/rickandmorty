@@ -1,16 +1,26 @@
 import { CardProps } from "../lib/types";
 
 // FC<ItemProps>, где ItemProps - интерфейс твоего компонента.
-export const Card: React.FC<CardProps> = ({ character }) => {
+export const Card: React.FC<CardProps> = ({ cardItems }) => {
   return (
     <>
-      <div className="border rounded-md w-52 overflow-hidden">
+      <div
+        className={`shadow-md rounded w-52 h-auto min-h-36 flex flex-col ${cardItems.name && cardItems.gender ? "" : "justify-center text-center"}`}
+      >
         <div className="rounded-t-md">
-          <img className="w-full h-auto object-cover" src={character.image} />
+          {cardItems.image ? (
+            <img
+              className="w-full h-full object-cover rounded-t-md"
+              src={cardItems.image}
+            />
+          ) : (
+            <div></div>
+          )}
         </div>
         <div className="p-3">
-          <p className="text-lg font-bold">{character.name}</p>
-          <p className="text-gray-400">{character.gender}</p>
+          <p className="text-lg font-bold">{cardItems.name}</p>
+          <p className="text-gray-400">{cardItems.gender}</p>
+          <p className="text-gray-400">{cardItems.dimension}</p>
         </div>
       </div>
     </>

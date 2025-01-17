@@ -5,8 +5,9 @@ export interface CharacterProps {
   species: string;
   gender: string;
   image: string;
+  dimension: string;
 }
 
 export interface CardProps {
-  character: CharacterProps;
+  cardItems: CharacterProps;
 }

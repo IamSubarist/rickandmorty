@@ -1,5 +1,6 @@
 import { getLocations } from "../api/get-locations";
 import LocationsLogo from "../assets/locations-logo.svg";
+import { Card } from "../features/Content/components/Card";
 import { Items } from "../features/Content/components/Items";
 import { Filters } from "../features/Locations/components/Filters";
 
@@ -11,14 +12,15 @@ export const Locations = () => {
         <Filters />
         <Items
           query={getLocations}
-          renderItem={(location) => (
-            <div
-              key={location.id}
-              className="shadow-md rounded p-4 w-52 h-36 flex flex-col justify-center text-center"
-            >
-              <p className="font-bold text-lg">{location.name}</p>
-              <p>{location.dimension}</p>
-            </div>
+          renderItem={(cardItems) => (
+            <Card key={cardItems.id} cardItems={cardItems} />
+            // <div
+            //   key={location.id}
+            //   className="shadow-md rounded p-4 w-52 h-36 flex flex-col justify-center text-center"
+            // >
+            //   <p className="font-bold text-lg">{location.name}</p>
+            //   <p>{location.dimension}</p>
+            // </div>
           )}
         />
       </div>
