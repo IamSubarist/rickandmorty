@@ -9,7 +9,10 @@ export const Card: React.FC<CardProps> = ({ cardItems }) => {
       >
         <div className="rounded-t-md">
           {cardItems.image ? (
-            <img className="w-full h-full object-cover" src={cardItems.image} />
+            <img
+              className="w-full h-full object-cover rounded-t-md"
+              src={cardItems.image}
+            />
           ) : (
             <div></div>
           )}
