@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery, QueryFunction } from "@tanstack/react-query";
+import { Button } from '@mui/material';
 
 /*
   Я бы сделал этот компонент обособленным, просто принимающим items, которые передавались бы в него через props.
@@ -31,12 +32,13 @@ export const Items = <T,>({ query, renderItem }: ItemsProps<T>) => {
         {data?.results.slice(0, visibleCount).map((item) => renderItem(item))}
       </div>
       {data && visibleCount < data.results.length && (
-        <button
+        <Button
+          variant="outlined"
           onClick={loadMore}
           className="mt-4 py-2 px-4 bg-blue-500 text-white rounded"
         >
           Load More
-        </button>
+        </Button>
       )}
     </>
   );
