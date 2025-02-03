@@ -1,6 +1,5 @@
 import { CardProps } from "../lib/types";
 
-// FC<ItemProps>, где ItemProps - интерфейс твоего компонента.
 export const Card: React.FC<CardProps> = ({ cardItems }) => {
   return (
     <>
