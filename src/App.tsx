@@ -5,6 +5,7 @@ import { Header } from "./features/Header/components/Header";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Locations } from "./pages/Locations";
 
+
 // Посмотреть архитектуру frontend приложений - FSD.
 /* 
   Попробовать передалать на структуру:
